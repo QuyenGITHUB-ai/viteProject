@@ -2,7 +2,8 @@ import { headerMenu } from "./header-menu.js";
 import { registerUser } from "./user.js";
 
 function actSubmit() {
-  registerUser("quyen@gmil.com", "qưeqwe");
+  const update = "Thay đổi thứ 2";
+  registerUser("quyen@gmil.", "qưesssqwe");
 }
 
 export function header(logoIpg) {
