@@ -1,7 +1,7 @@
 import { headerMenu } from "./header-menu.js";
-import { registerUser } from "./user.js";
 
 export function header(logoIpg) {
+  // Don't check currentUser here - let updateHeaderUI() handle all state
   return `
     <header class="p-3 bg-dark text-white">
   <div class="container">
@@ -24,8 +24,7 @@ export function header(logoIpg) {
         />
       </form>
       <div class="text-end">
-        <a data-bs-toggle="modal" data-bs-target="#dangky" class="btn btn-outline-light me-2"> Đăng ký </a>
-        <a data-bs-toggle="modal" data-bs-target="#dangnhap" class="btn btn-warning">Đăng nhập</a>
+        <!-- Auth UI will be populated by updateHeaderUI() from user.js -->
       </div>
     </div>
   </div>
@@ -55,7 +54,7 @@ export function header(logoIpg) {
               />
               <label for="regUsername">Email address</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 position-relative">
               <input
                 type="password"
                 class="form-control rounded-3"
@@ -63,8 +62,24 @@ export function header(logoIpg) {
                 placeholder="Password"
               />
               <label for="regPassword">Password</label>
+              <button
+                type="button"
+                class="btn btn-sm position-absolute end-0 top-50 translate-middle-y togglePassword"
+                data-target="regPassword"
+                style="border: none; background: none; color: #666; pointer-events: auto; z-index: 10;"
+              >
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <div id="passwordStrength" class="mb-3" style="display: none;">
+              <small class="d-block mb-1">Mật khẩu của bạn:</small>
+              <div class="progress" style="height: 6px;">
+                <div id="strengthBar" class="progress-bar" role="progressbar" style="width: 0%"></div>
+              </div>
+              <small id="strengthText" class="d-block mt-1 text-secondary"></small>
             </div>
             <button
+              id="regSubmit"
               class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
               type="submit"
             >
@@ -124,16 +139,25 @@ export function header(logoIpg) {
               />
               <label for="username">Email address</label>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 position-relative">
               <input
                 type="password"
                 class="form-control rounded-3"
                 id="password"
                 placeholder="Password"
               />
-              <label for="floatingPassword">Password</label>
+              <label for="password">Password</label>
+              <button
+                type="button"
+                class="btn btn-sm position-absolute end-0 top-50 translate-middle-y togglePassword"
+                data-target="password"
+                style="border: none; background: none; color: #666; pointer-events: auto; z-index: 10;"
+              >
+                <i class="bi bi-eye"></i>
+              </button>
             </div>
             <button
+              id="loginSubmit"
               class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
               type="submit"
             >

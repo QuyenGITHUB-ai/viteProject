@@ -9,6 +9,7 @@ import logoIpg from "./assets/logo.jpg";
 import { header } from "./header.js";
 import { footer } from "./footer.js";
 import { content } from "./content.js";
+import { updateHeaderUI } from "./user.js";
 
 //3. import tài nguyên để sử dụng ở tấ cả mọi nơi
 document.querySelector("#app").innerHTML = `
@@ -16,3 +17,6 @@ document.querySelector("#app").innerHTML = `
   <div>${content()}</div>
   <div>${footer()}</div>
 `;
+
+// Initialize header UI after rendering
+updateHeaderUI();
