@@ -70,6 +70,7 @@ export function header(logoIpg) {
             >
               Đăng ký
             </button>
+            <div id="regMessage" class="mt-2"></div>
             <small class="text-body-secondary"
               >By clicking Sign up, you agree to the terms of use.</small
             >
@@ -113,21 +114,21 @@ export function header(logoIpg) {
           ></button>
         </div>
         <div class="modal-body p-5 pt-0">
-          <form class="">
+          <form id="loginForm">
             <div class="form-floating mb-3">
               <input
                 type="email"
                 class="form-control rounded-3"
-                id="floatingInput"
+                id="username"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Email address</label>
+              <label for="username">Email address</label>
             </div>
             <div class="form-floating mb-3">
               <input
                 type="password"
                 class="form-control rounded-3"
-                id="floatingPassword"
+                id="password"
                 placeholder="Password"
               />
               <label for="floatingPassword">Password</label>
@@ -138,6 +139,7 @@ export function header(logoIpg) {
             >
               Đăng nhập
             </button>
+            <div id="loginMessage" class="mt-2"></div>
             <small class="text-body-secondary"
               >By clicking Sign up, you agree to the terms of use.</small
             >
