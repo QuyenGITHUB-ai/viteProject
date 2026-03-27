@@ -40,8 +40,27 @@ export function registerUser(username, password) {
   };
   //5. Lưu object vào localStorage
   addUser(user);
-  alert("Đăng ký thành công!");
+  // alert("Đăng ký thành công!");
 }
+
+// ******************* Code phần Register (Đăng ký)
+// Sử dụng event delegation vì form được tạo sau khi JS load
+document.addEventListener("submit", function (event) {
+  if (event.target.id === "regFormUser") {
+    event.preventDefault();
+    //Lấy dữ liệu từ các ô input
+    const username = document.getElementById("regUsername").value.trim();
+    const password = document.getElementById("regPassword").value;
+    
+    if (username && password) {
+      registerUser(username, password);
+      alert("Đăng ký thành công!");
+      event.target.reset();
+    } else {
+      alert("Vui lòng điền đầy đủ email và mật khẩu!");
+    }
+  }
+});
 
 // ******************* Code phần Login (Đăng nhập)
 const loginForm = document.getElementById("loginForm");

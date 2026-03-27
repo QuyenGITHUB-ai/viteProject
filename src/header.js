@@ -1,11 +1,6 @@
 import { headerMenu } from "./header-menu.js";
 import { registerUser } from "./user.js";
 
-function actSubmit() {
-  const update = "Thay đổi thứ 2";
-  registerUser("quyen@gmil.", "qưesssqwe");
-}
-
 export function header(logoIpg) {
   return `
     <header class="p-3 bg-dark text-white">
@@ -50,24 +45,24 @@ export function header(logoIpg) {
           ></button>
         </div>
         <div class="modal-body p-5 pt-0">
-          <form class="" id="regFormUser" onsubmit="${actSubmit()}">
+          <form class="" id="regFormUser">
             <div class="form-floating mb-3">
               <input
                 type="email"
                 class="form-control rounded-3"
-                id="floatingInput"
+                id="regUsername"
                 placeholder="name@example.com"
               />
-              <label for="floatingInput">Email address</label>
+              <label for="regUsername">Email address</label>
             </div>
             <div class="form-floating mb-3">
               <input
                 type="password"
                 class="form-control rounded-3"
-                id="floatingPassword"
+                id="regPassword"
                 placeholder="Password"
               />
-              <label for="floatingPassword">Password</label>
+              <label for="regPassword">Password</label>
             </div>
             <button
               class="w-100 mb-2 btn btn-lg rounded-3 btn-primary"
