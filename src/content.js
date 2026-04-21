@@ -1,4 +1,4 @@
-import { productList } from "./product-list.js";
+import { productList } from "./frontend/product/product-list.js";
 import { contentLeft } from "./content-left.js";
 
 export function content() {

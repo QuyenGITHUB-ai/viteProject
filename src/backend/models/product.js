@@ -30,3 +30,7 @@ export async function createProduct(data) {
 
   if (insertError) throw insertError;
 }
+
+export async function list() {
+  return await supabase.from("products").select("*");
+}

@@ -108,7 +108,10 @@ const productData = [
   },
 ];
 
+import { getList } from "../../backend/services/product";
+
 export function productList() {
+  console.log(getList());
   //2. Khởi tạo biến chứa html
   let html = "";
   //3. Duyệt danh sách sản phẩm
