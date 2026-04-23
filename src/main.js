@@ -1,5 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/js/bootstrap.bundle.min.js"; // Changed to bundle which includes Modal functionality
 import "./style.css";
 
 //1. Cách gọi ảnh

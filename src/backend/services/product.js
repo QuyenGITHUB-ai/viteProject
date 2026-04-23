@@ -1,14 +1,21 @@
-import { createProduct, list } from "../models/product.js";
+import { createProduct, fetchProducts, getProductById, updateProduct, deleteProduct } from "../models/product.js";
 
 export function postProductData(data) {
-  createProduct(data);
+  return createProduct(data);
 }
 
-export function getList() {
-  console.log(list());
-  const getData = async () => {
-    const data = await list();
-  };
+export async function getList() {
+  return await fetchProducts();
+}
 
-  return getData();
+export async function getProduct(id) {
+  return await getProductById(id);
+}
+
+export async function updateProductData(id, data) {
+  return await updateProduct(id, data);
+}
+
+export async function removeProduct(id) {
+  return await deleteProduct(id);
 }
